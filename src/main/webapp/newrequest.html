@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/newrequest.css">
+        <title>New Request</title>
+    </head>
+    <body class="newrequestbody">
+        <div id="nav-placeholder"></div>
+        <div class="newrequest"> New Request</div>
+        <div class="maincontainer">
+            <form>
+                <label class="initialdate" for="initialdate"> Initial Date </label><br>
+                <input type="date" id="initialdate" name="initialdate"><br>
+                <label class="finaldate" for="finaldate"> Final Date </label><br>
+                <input type="date" id="finaldate" name="finaldate"><br>
+                <label class="subject" for="subject"> Subject </label><br>
+                <input type="text" id="subject" name="subject"><br>
+                <label class="proof" for="proof"> Proof </label><br>
+                <input type="url" id="proof" name="proof">
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(function () {
+				$("#nav-placeholder").load("nav_login.html");
+			});
+		</script>
+    </body>
+</html>

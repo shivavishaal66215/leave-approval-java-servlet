@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/home.css" />
+		<title>Home</title>
+	</head>
+	<body>
+		<div id="nav-placeholder"></div>
+		<div class="maincontainer">
+			<div class="maincontent">
+				<div class="heading">Home</div>
+				<div class="sidebar">
+					<a class="button" href="#"><div>Register</div></a>
+					<a class="button" href="login.html"><div>Login</div></a>
+				</div>
+			</div>
+			<div class="content">
+				<div class="leftcontainer"><img src="./images/home.svg" /></div>
+				<div class="rightcontainer">
+					<div class="subheading">Leave Approval System</div>
+					<div class="aboutcontent">
+						This is our solution to the quintessential leave management problem.
+						This system offers a simple yet elegant UI that promotes good
+						workplace practices. Through this system, we aim to reduce the
+						clutter created by piles of paperwork. Privacy features implemented
+						within the core functionalities of the system keep the users' data
+						secure. There are two kinds of users in this system. The first one
+						is a "manager". A manager has responsibilities that are analogous to
+						that of an administrator. The second one is an "employee". An
+						employee actively takes part by making leave or account creation
+						requests which will then be forwarded to and handled by the
+						managers.
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(function () {
+				$("#nav-placeholder").load("nav_default.html");
+			});
+		</script>
+	</body>
+</html>

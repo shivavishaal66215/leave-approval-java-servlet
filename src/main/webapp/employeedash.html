@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/dash.css" />
+		<title>Dashboard</title>
+	</head>
+	<body>
+		<div id="nav-placeholder"></div>
+		<div class="maincontainer">
+			<div class="heading">Dashboard</div>
+			<div class="tiles">
+				<div class="tile">
+					<img src="./images/watch_later_black_48dp.svg" />
+					<div class="tile-heading">Make a new request</div>
+					<div class="tile-about">
+						Use this to make a new leave<br />request
+					</div>
+					<div class="tile-button">Go</div>
+				</div>
+				<div class="verticalline"></div>
+				<div class="horizontalline"></div>
+				<div class="tile">
+					<img src="./images/icons8-info.svg" />
+					<div class="tile-heading">View all requests</div>
+					<div class="tile-about">
+						Use this to view all the leave<br />
+						requests made
+					</div>
+					<div class="tile-button">Go</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			$(function () {
+				$("#nav-placeholder").load("nav_login.html");
+			});
+		</script>
+	</body>
+</html>

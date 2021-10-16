@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    background-color: rgb(52, 58, 64);
+}
+
+#allRequestTitle{
+    font-size: 50px;
+    text-align: center;
+    padding: 40px;
+    color: white;
+    background-color: rgb(52, 58, 64)
+}
+
+.allRequestcontainer{
+    display: grid;
+    grid-template-columns: repeat(5,minmax(180px,180px));
+    grid-gap: 20px;
+    justify-content: center;
+    background-color: rgb(52, 58, 64)
+}
+.allRequest{
+    background-color: white;
+    color: black;
+    /* width: 200px; */
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.allRequestStartDateTitle,.allRequestEndDateTitle,
+.allRequestSubjectTitle,.allRequestProofTitle,.allRequestStatusTitle{
+    font-size: 16px;
+    padding: 3px;
+    font-weight: bold;
+}
+.allRequestStartDate,.allRequestEndDate,
+.allRequestSubject,.allRequestProof,.allRequestStatus{
+    font-size: 14px;
+    border: 1px solid black;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.allRequestButtons{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.allRequestCancel{
+    border: 1px solid black;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: #c4c4c4;
+    color: black;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allRequestCancel:hover,.allrequestcancel:visited{
+    text-decoration: none;
+    color: black;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .allRequestcontainer{
+        grid-template-columns: repeat(3,minmax(200px,200px));
+    }
+}
+
+@media (max-width: 768px){
+    .allRequestcontainer{
+        grid-template-columns: repeat(1,minmax(250px,250px));
+    }
+}

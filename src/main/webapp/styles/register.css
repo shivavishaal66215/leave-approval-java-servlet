@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    background-color: rgb(52, 58, 64);
+}
+
+#loginTitle{
+    color: white;
+    background-color: rgb(52, 58, 64);
+    font-size: 50px;
+    text-align: center;
+    padding: 40px;
+}
+
+.loginContainer{
+    background-color: rgb(52, 58, 64);
+    color: black;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.logins{
+    background-color: white;
+    width: 230px;
+    height: 450px;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input,select{
+    width: 180px;
+    background-color: #c4c4c4;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: 1px solid black;
+    padding: 1px 5px;
+}
+
+input:focus,select:focus{
+    outline: none;
+}
+
+.loginButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.loginButtons a{
+    border: 1px black solid;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    color: black;
+    padding: 1px 6px;
+}
+
+.loginButtons a, .loginButtons a:hover, .loginButtons a:visited{
+    text-decoration: none;
+    color: black
+}

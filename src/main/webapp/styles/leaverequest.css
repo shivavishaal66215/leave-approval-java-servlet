@@ -1,0 +1,89 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+html,body{
+    background-color: rgb(52, 58, 64);
+}
+
+#leaveRequestTitle{
+    font-size: 50px;
+    text-align: center;
+    padding: 40px;
+    color: white;
+    background-color: rgb(52, 58, 64)
+}
+
+.leaveRequestcontainer{
+    display: grid;
+    grid-template-columns: repeat(5,minmax(180px,180px));
+    grid-gap: 20px;
+    justify-content: center;
+    background-color: rgb(52, 58, 64)
+}
+.leaveRequest{
+    background-color: white;
+    color: black;
+    /* width: 200px; */
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.leaveRequestUserIdTitle,.leaveRequestStartDateTitle,.leaveRequestEndDateTitle,
+.leaveRequestSubjectTitle,.leaveRequestProofTitle{
+    font-size: 16px;
+    padding: 3px;
+    font-weight: bold;
+}
+.leaveRequestUserId,.leaveRequestStartDate,.leaveRequestEndDate,
+.leaveRequestSubject,.leaveRequestProof{
+    font-size: 14px;
+    border: 1px solid black;
+    background-color: #c4c4c4;
+    border-radius: 50px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leaveRequestButtons{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.leaveRequestAccept, .leaveRequestReject{
+    border: 1px solid black;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: #c4c4c4;
+    color: black;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaveRequestAccept:hover, .leaveRequestReject:hover,.leaveRequestAccept:visited, .leaveRequestReject:visited{
+    text-decoration: none;
+    color: black;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .leaveRequestcontainer{
+        grid-template-columns: repeat(3,minmax(200px,200px));
+    }
+}
+
+@media (max-width: 768px){
+    .leaveRequestcontainer{
+        grid-template-columns: repeat(1,minmax(250px,250px));
+    }
+}
