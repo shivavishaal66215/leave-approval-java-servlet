@@ -8,7 +8,8 @@ This is the JSP + JDBC implementation for a leave approval system.
 
 Both types of users can register and login to access the system.
 
-## Normal Workflow: An Employee can request for a leave by making a leave-request. A manager can view and reject/approve the request.
+## Normal Workflow: 
+An Employee can request for a leave by making a leave-request. A manager can view and reject/approve the request.
 
 ## Manager Roles:
 1. Approve/Reject new user creation
