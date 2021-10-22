@@ -1,11 +1,8 @@
 package invLogin;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*;  
 
 import java.sql.*; 
 import java.sql.Connection;
@@ -75,11 +72,13 @@ public class Login extends HttpServlet
         String user=req.getParameter("login-user-id");
         String pass=req.getParameter("login-password");
         String type=req.getParameter("login-type");
-
+        
         try {
 	        if(check_logincred(user,pass, type))
 	        {
 	            pw.println("Login Success...!");
+	            HttpSession session=req.getSession();
+	            session.setAttribute("username",user);  
 	        }
 	        else
 	        {

@@ -16,12 +16,13 @@ import java.sql.Statement;
 public class Register extends HttpServlet
 {
 	
-  public static boolean check_logincred(String user,String password) throws Exception
+  public static boolean check_registercred(String username,String userid, String password, String confirm, String type) throws Exception
   {
-	  if(user.trim().equals("")||password.trim().equals(""))
-	  {
+	  
+	  if(!confirm.equals(password)) {
 		  return false;
 	  }
+	  
       String url = "jdbc:mysql://localhost:3306/Invigilator";
       String uname="root";
       String pass="";
@@ -34,22 +35,40 @@ public class Register extends HttpServlet
           System.out.println(e);
       }
       
-//      DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
+      String addon = "";
+      if(type.equals("Employee")) {
+    	  addon = "Emp";
+      }
+      else {
+    	  addon = "Man";
+      }
+      
+      //Checking if user already exists in the system
       Connection con=DriverManager.getConnection(url, uname, pass);   
       Statement st=con.createStatement();  
-      ResultSet rs=st.executeQuery("select EmpPassword from employee where EmpId='" +user+"';"); 
+      ResultSet rs=st.executeQuery("select * from "+ type + " where " + addon + "Id='" +userid+"';"); 
       
-      String pd="";
-      while(rs.next() ) 
+      
+      String pd = "";
+      int count = 0;
+      while(rs.next()) 
       {
           System.out.println(rs.getString(1)); 
           pd=rs.getString(1);
+          count += 1;
       }
+      
+      if(count > 0) {
+    	  return false;
+      }
+      
+      //Creating new user
+      int rs2 = st.executeUpdate("insert into " + type + "(" + addon+"Id ,"+addon+"Name,"+addon+"Password) VALUES("+userid+","+username+","+password+");"); 
       
       st.close();
       con.close();
       
-      return password.equals(pd) ; 
+      return true;
   }
 
 	
@@ -59,17 +78,19 @@ public class Register extends HttpServlet
         res.setContentType("text/html");
         
         
-        String user=req.getParameter("login-user-id");
-        String pass=req.getParameter("login-password");
-
+        String username = req.getParameter("username");
+        String userid = req.getParameter("login-user-id");
+        String pass = req.getParameter("login-password");
+        String confirm = req.getParameter("confirm-password");
+        String type = req.getParameter("registration-type");
         try {
-	        if(check_logincred(user,pass))
+	        if(check_registercred(username,userid,pass,confirm,type))
 	        {
-	            pw.println("Login Success...!");
+	            pw.println("Registration Success...!");
 	        }
 	        else
 	        {
-	            pw.println("Login Failed...!");
+	            pw.println("Registration Failed...!");
 	        }
         }
         catch(Exception e) 
