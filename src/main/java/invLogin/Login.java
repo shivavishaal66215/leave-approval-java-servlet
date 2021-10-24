@@ -19,7 +19,7 @@ public class Login extends HttpServlet
 	  {
 		  return false;
 	  }
-      String url = "jdbc:mysql://localhost:3306/invigilator";
+      String url = "jdbc:mysql://localhost:3306/leaveapprovalsystem";
       String uname="root";
       String pass="";
       try 
@@ -76,9 +76,9 @@ public class Login extends HttpServlet
         try {
 	        if(check_logincred(user,pass, type))
 	        {
-	            pw.println("Login Success...!");
 	            HttpSession session=req.getSession();
-	            session.setAttribute("username",user);  
+	            session.setAttribute("username",user);
+	            res.sendRedirect("employeedash.html");
 	        }
 	        else
 	        {

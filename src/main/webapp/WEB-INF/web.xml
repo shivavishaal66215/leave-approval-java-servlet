@@ -32,7 +32,35 @@
 <url-pattern>/Test</url-pattern>
 </servlet-mapping>
 
+<servlet>
+<servlet-name>Allrequest</servlet-name>
+<servlet-class>invLogin.Allrequest</servlet-class>
+</servlet>
 
+<servlet-mapping>
+<servlet-name>Allrequest</servlet-name>
+<url-pattern>/Allrequest</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Leaverequest</servlet-name>
+<servlet-class>invLogin.Leaverequest</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Leaverequest</servlet-name>
+<url-pattern>/Leaverequest</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Newrequest</servlet-name>
+<servlet-class>invLogin.Newrequest</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Newrequest</servlet-name>
+<url-pattern>/Newrequest</url-pattern>
+</servlet-mapping>
 
 <welcome-file-list>
 <welcome-file>home.html</welcome-file>

@@ -1,45 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/register.css">
     <title>Register</title>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+<div id="nav-placeholder"></div>
 
     <div id="loginTitle">Register</div>
 
     <div class="loginContainer">
         <div class="logins">
-            <form action="Register" method="post">
+            <form method="POST" action="Register">
                 <label for="username">Username</label>
                 <br/>
-                <input type="text" name="username">
+                <input type="text" name="username" required="" oninvalid="this.setCustomValidity('Enter a valid username')" oninput="setCustomValidity('')"
+                                   	>
                 <br/>
                 <label for="login-user-id">User ID</label>
                 <br/>
-                <input type="text" name="login-user-id">
+                <input type="text" name="userid" required=""
+              	oninvalid="this.setCustomValidity('Enter a valid userid')" oninput="setCustomValidity('')">
                 <br/>
                 <label for="login-password">Password</label>
                 <br/>
-                <input type="password" name="login-password">
+                <input type="password" name="password" required
+                oninvalid="this.setCustomValidity('Enter a valid Password')" oninput="setCustomValidity('')">
                 <br/>
                 <label for="confirm-password">Confirm Password</label>
                 </br>
-                <input type="password" name="confirm-password">
+                <input type="password" name="confirmpassword" required>
                 <label for="registration-type">Registration Type</label>
                 </br>
-                <select name="registration-type" id="registration-type">
-                    <option value="Employee">Employee</option>
-                    <option value="Manager">Manager</option>
+                <select name="registration-type" id="registrationtype">
+                	<option value="Select type">Select Type</option>
+                    <option value="employee">Employee</option>
+                    <option value="manager">Manager</option>
                 </select>
-                <button>Submit</button>
+                   <div class="loginButtons">
+                   <input type="submit" value="Submit">
+                    
+                </div>
             </form>
+
         </div>
     </div>
+   
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {
