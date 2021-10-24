@@ -84,7 +84,7 @@ public class Register extends HttpServlet {
 	      }
 	      
 	     
-	      int set1 = st.executeUpdate("insert into " + registrationtype + "(" + value + "Id," + value + "Name," + value + "Password) VALUES("+userid+","+username+","+password+");");
+	      int set1 = st.executeUpdate("insert into " + registrationtype + "(" + value + "Id," + value + "Name," + value + "Password) VALUES('"+userid+"','"+username+"','"+password+"');");
 	      
 	      st.close();
 	      con.close();
@@ -92,7 +92,6 @@ public class Register extends HttpServlet {
 	      return true;
 	  }
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			doGet(request, response);
 		 	PrintWriter pw=response.getWriter();
