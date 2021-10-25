@@ -78,7 +78,10 @@ public class Login extends HttpServlet
 	        {
 	            HttpSession session=req.getSession();
 	            session.setAttribute("username",user);
-	            res.sendRedirect("employeedash.html");
+	            if(type.equals("Employee"))
+	            	res.sendRedirect("employeedash.html");
+	            else
+	            	res.sendRedirect("managerdash.html");
 	        }
 	        else
 	        {
