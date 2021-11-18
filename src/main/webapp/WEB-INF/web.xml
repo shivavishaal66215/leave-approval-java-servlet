@@ -135,6 +135,25 @@
 <url-pattern>/Dashboard</url-pattern>
 </servlet-mapping>
 
+<servlet>
+<servlet-name>Logout</servlet-name>
+<servlet-class>invLogin.Logout</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Logout</servlet-name>
+<url-pattern>/Logout</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Home</servlet-name>
+<servlet-class>invLogin.Home</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Home</servlet-name>
+<url-pattern>/Home</url-pattern>
+</servlet-mapping>
 
 <welcome-file-list>
 <welcome-file>home.html</welcome-file>
