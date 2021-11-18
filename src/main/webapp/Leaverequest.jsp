@@ -25,10 +25,11 @@ java.sql.Statement"%>
     <div id="nav-placeholder"></div>
 
     <div id="leaveRequestTitle">Leave Request</div>
-    
+    <form>
     <div class="leaveRequestcontainer">
     <%!
     	ResultSet rs;
+    	String reqid;
     	String uid;
 		String sdate;
 		String edate;
@@ -39,6 +40,7 @@ java.sql.Statement"%>
 		rs=(ResultSet)request.getAttribute("leaverequests");
 		while(rs.next()) 
         {
+			reqid=rs.getString("ReqId");
         	uid=rs.getString("EmpId");
         	sdate=rs.getString("StartDate"); 
             edate=rs.getString("EndDate"); 
@@ -62,12 +64,14 @@ java.sql.Statement"%>
             <a href=<%= proof %> target="_blank"><div class='leaveRequestProof'> <%= proof %> </div></a>        
             
             <div class="leaveRequestButtons">
-                <a href="#Accept" class="leaveRequestAccept">Accept</a>
-                <a href="#Reject" class="leaveRequestReject">Reject</a>
+            	<input type="text" style="display:none" name="reqId" value=<%= reqid %> >
+                <button type="submit" class="leaveRequestAccept" formaction="Leaverequestaccept">Accept</button>
+				<button type="submit" class="leaveRequestReject" formaction="Leaverequestreject">Reject</button>
             </div>
         </div>
     <% } %>
     </div>
+    </form>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script>
         $(function () {

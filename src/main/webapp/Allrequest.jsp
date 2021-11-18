@@ -46,7 +46,9 @@ java.sql.Statement"%>
             		subj=rs.getString("Subject"); 
             		proof=rs.getString("Proof"); 
             		status=rs.getString("Status");
-            	%>	<div class='allRequest'>
+            	%>	
+            		<form>
+            		<div class='allRequest'>
             	
             			<div class='allRequestStartDateTitle'>Start Date</div>
             			<div class='allRequestStartDate'> <%= sdate %> </div>
@@ -65,34 +67,16 @@ java.sql.Statement"%>
             	        
             	        <div class='allRequestButtons'>
             	        <%
-							if(!status.equals("Approved")) 
+							if(status.equals("Pending")) 
 							{
 						%>
-								<%!
-									public static void deletereq(String id)
-									{
-										String url = "jdbc:mysql://localhost:3306/LeaveApprovalSystem";
-										String uname="root";
-										String pass="";
-										try
-										{
-											Class.forName("com.mysql.cj.jdbc.Driver");
-	    									Connection con=DriverManager.getConnection(url, uname, pass);   
-	    									Statement st=con.createStatement();
-											int i=st.executeUpdate("delete from Log where ReqId='"+id+"'");
-											//out.println("Data Deleted Successfully!");
-										}
-										catch(Exception e)
-										{
-											System.out.print(e);
-										}
-									}
-								%>
-            					<a href='' class='allRequestCancel' onclick=<% deletereq(reqid); %>>Cancel</a>
+								<input type="text" style="display:none" name="reqid" value=<%= reqid %> >
+            					<button type="submit" class="allRequestCancel" formaction="Allrequestcancel">Cancel</button>
             						
 						<% } %>
 						</div>
-            		</div>      
+            		</div>
+            		</form>      
             	<% } %>
 		</div>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>

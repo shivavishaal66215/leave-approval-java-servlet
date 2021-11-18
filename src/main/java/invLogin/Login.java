@@ -45,9 +45,9 @@ public class Login extends HttpServlet
 //      DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
       Connection con=DriverManager.getConnection(url, uname, pass);   
       Statement st=con.createStatement();  
-      ResultSet rs=st.executeQuery("select " + addon + "Password from "+ type + " where " + addon + "Id='" +user+"';"); 
+      ResultSet rs=st.executeQuery("select " + addon + "Password from "+ type + " where " + addon + "Id='" +user+"' and Valid in ('1');"); 
       
-      System.out.println("select " + addon + "Password from "+ type + " where " + addon + "Id='" +user+"';");
+      System.out.println("select " + addon + "Password from "+ type + " where " + addon + "Id='" +user+"' and Valid = '1';");
       
       String pd="";
       while(rs.next() ) 
