@@ -43,6 +43,17 @@
 </servlet-mapping>
 
 <servlet>
+<servlet-name>Allrequestcancel</servlet-name>
+<servlet-class>invLogin.Allrequestcancel</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Allrequestcancel</servlet-name>
+<url-pattern>/Allrequestcancel</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
 <servlet-name>Leaverequest</servlet-name>
 <servlet-class>invLogin.Leaverequest</servlet-class>
 </servlet>
@@ -51,6 +62,27 @@
 <servlet-name>Leaverequest</servlet-name>
 <url-pattern>/Leaverequest</url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>Leaverequestaccept</servlet-name>
+<servlet-class>invLogin.Leaverequestaccept</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Leaverequestaccept</servlet-name>
+<url-pattern>/Leaverequestaccept</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Leaverequestreject</servlet-name>
+<servlet-class>invLogin.Leaverequestreject</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Leaverequestreject</servlet-name>
+<url-pattern>/Leaverequestreject</url-pattern>
+</servlet-mapping>
+
 
 <servlet>
 <servlet-name>Newrequest</servlet-name>
@@ -122,7 +154,6 @@
 <servlet-name>Home</servlet-name>
 <url-pattern>/Home</url-pattern>
 </servlet-mapping>
-
 
 <welcome-file-list>
 <welcome-file>home.html</welcome-file>
