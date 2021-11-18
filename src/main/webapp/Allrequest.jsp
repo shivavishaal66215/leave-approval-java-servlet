@@ -65,7 +65,7 @@ java.sql.Statement"%>
             	        
             	        <div class='allRequestButtons'>
             	        <%
-							if(!status.equals("Approved")) 
+							if(status.equals("Pending")) 
 							{
 						%>
 								<%!
