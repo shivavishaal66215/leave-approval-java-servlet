@@ -33,11 +33,16 @@ public class Leaverequestreject extends HttpServlet{
         HttpSession session=req.getSession(false);    
         String manid=(String)session.getAttribute("username");
         try {
-        	//pw.println(uid);
+        	if(manid.charAt(0) == 'M') {
+        		//do nothing
+        	}
+        	else if(manid.charAt(0) == 'E') {
+        		throw new Exception("error");   
+        	}
         }
         catch(Exception e) 
         {
-            System.out.println(e);
+            res.sendRedirect("home.html");
         }
         
         String rid=req.getParameter("reqId");

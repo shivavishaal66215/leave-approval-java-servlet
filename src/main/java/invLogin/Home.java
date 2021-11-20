@@ -16,7 +16,6 @@ public class Home extends HttpServlet
     {
         
     	HttpSession session=req.getSession(false);    
-    	session.setAttribute("username",null);
     	res.sendRedirect("home.html");
     }
 }

@@ -43,6 +43,10 @@ public class Register extends HttpServlet {
 			  return false;
 		  }
 		  
+		  if(!((userid.charAt(0) == 'E' && registrationtype.equals("employee")) || (userid.charAt(0) == 'M' && registrationtype.equals("manager")))) {
+			  return false;
+		  }
+		  
 		  String dburl ="jdbc:mysql://localhost:3306/leaveapprovalsystem";
 		  String dbuname="root";
 		  String dbpassword="";
@@ -106,11 +110,14 @@ public class Register extends HttpServlet {
 	        try {
 		        if(validation(username,userid,password,confirmpassword,registrationtype))
 		        {
-		            pw.println("Data Entered Successfully!");
+		            response.sendRedirect("home.html");
 		        }
 		        else
 		        {
-		            pw.println("Data Not Entered!");
+		        	 pw.println("<script type=\"text/javascript\">");
+		        	 pw.println("alert('Data entered is invalid.');");
+		        	 pw.println("location='register.html';");
+		        	 pw.println("</script>");
 		        }
 	        }
 	        catch(Exception e) 

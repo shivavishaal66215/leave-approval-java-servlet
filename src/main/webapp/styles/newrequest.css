@@ -42,7 +42,7 @@ form
     align-items: center;
     border-radius: 50px;
 }
-input 
+input,select,option
 {
     width: 75%;
     border-radius: 50px;
@@ -65,7 +65,7 @@ input
     font-weight: bold;
     font-size: 20px;
 }
-.subject
+.typeleave
 {
     font-weight: bold;
     font-size: 20px;

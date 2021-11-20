@@ -14,11 +14,16 @@ public class NewUserRequests extends HttpServlet{
         HttpSession session=req.getSession(false);    
         String uid=(String)session.getAttribute("username");
         try {
-        	//pw.println(uid);
+        	if(uid.charAt(0) == 'M') {
+        		//do nothing
+        	}
+        	else if(uid.charAt(0) == 'E') {
+        		throw new Exception("error");   
+        	}
         }
         catch(Exception e) 
         {
-            System.out.println(e);
+            res.sendRedirect("home.html");
         }
         String url = "jdbc:mysql://localhost:3306/LeaveApprovalSystem";
         String uname="root";
@@ -29,7 +34,7 @@ public class NewUserRequests extends HttpServlet{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection(url, uname, pass);   
             Statement st=con.createStatement();  
-            ResultSet rs=st.executeQuery("select * from Employee where Valid in ('0')"); 
+            ResultSet rs=st.executeQuery("select EmpId,EmpName from Employee where Valid in ('0') union select ManId as EmpId, ManName as EmpName from Manager where Valid in ('0')");
             req.setAttribute("allrequests",rs);
             RequestDispatcher view = req.getRequestDispatcher("/Newuserrequests.jsp");  
             view.forward(req,res);

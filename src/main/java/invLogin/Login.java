@@ -86,7 +86,7 @@ public class Login extends HttpServlet
 	        else
 	        {
 	        	 pw.println("<script type=\"text/javascript\">");
-	        	 pw.println("alert('User or password incorrect');");
+	        	 pw.println("alert('Either your username or password is incorrect. Or you are yet to be approved.');");
 	        	 pw.println("location='login.html';");
 	        	 pw.println("</script>");
 	        }

@@ -14,8 +14,14 @@
                 <input type="date" id="initialdate" name="initialdate"><br>
                 <label class="finaldate" for="finaldate"> Final Date </label><br>
                 <input type="date" id="finaldate" name="finaldate"><br>
-                <label class="subject" for="subject"> Subject </label><br>
-                <input type="text" id="subject" name="subject"><br>
+                <label class="typeleave" for="leavetype"> Leave Type </label><br>
+                <select id="leavetype" name="leavetype">
+						<option value="Casual Leave">Casual Leave</option>
+						<option value="Earned Leave">Earned Leave</option>
+						<option value="Sick Leave">Sick Leave</option>
+						<option value="Marriage Leave">Marriage Leave</option>
+						<option value="Paternity Leave">Paternity Leave</option>
+				</select>
                 <label class="proof" for="proof"> Proof </label><br>
                 <input type="url" id="proof" name="proof">
                 <button class="submit" type="submit">Submit</button>

@@ -155,6 +155,16 @@
 <url-pattern>/Home</url-pattern>
 </servlet-mapping>
 
+<servlet>
+<servlet-name>Newrequest_Test</servlet-name>
+<servlet-class>invLogin.Newrequest_Test</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>Newrequest_Test</servlet-name>
+<url-pattern>/Newrequest_Test</url-pattern>
+</servlet-mapping>
+
 <welcome-file-list>
 <welcome-file>home.html</welcome-file>
 </welcome-file-list>

@@ -17,7 +17,15 @@ public class NewUserRequestsReject extends HttpServlet{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection(url, uname, pass);   
 			Statement st=con.createStatement();
-			int i=st.executeUpdate("delete from Employee where empid= '" + empid + "'");
+			
+			if(empid.charAt(0) == 'M') {
+				int i=st.executeUpdate("delete from Manager where manid= '" + empid + "'");
+			}
+			else {
+				int i=st.executeUpdate("delete from Employee where empid= '" + empid + "'");
+			}
+			
+			
 			//out.println("Data Deleted Successfully!");
 		}
 		catch(Exception e)
@@ -30,7 +38,20 @@ public class NewUserRequestsReject extends HttpServlet{
     {
 		PrintWriter pw=res.getWriter();
         res.setContentType("text/html");
-        
+        HttpSession session=req.getSession(false);
+        String manid=(String)session.getAttribute("username");
+        try {
+        	if(manid.charAt(0) == 'M') {
+        		//do nothing
+        	}
+        	else if(manid.charAt(0) == 'E') {
+        		throw new Exception("error");   
+        	}
+        }
+        catch(Exception e) 
+        {
+            res.sendRedirect("home.html");
+        }
         String empid=req.getParameter("empid");
         String empName=req.getParameter("empName");
         

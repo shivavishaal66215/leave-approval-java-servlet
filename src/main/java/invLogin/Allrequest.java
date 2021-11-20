@@ -13,12 +13,18 @@ public class Allrequest extends HttpServlet{
         res.setContentType("text/html");
         HttpSession session=req.getSession(false);    
         String uid=(String)session.getAttribute("username");
+        
         try {
-        	//pw.println(uid);
+        	if(uid.charAt(0) == 'E') {
+        		//do nothing
+        	}
+        	else if(uid.charAt(0) == 'M') {
+        		throw new Exception("error");   
+        	}
         }
         catch(Exception e) 
         {
-            System.out.println(e);
+            res.sendRedirect("home.html");
         }
         String url = "jdbc:mysql://localhost:3306/LeaveApprovalSystem";
         String uname="root";

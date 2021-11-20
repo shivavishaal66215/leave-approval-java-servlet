@@ -18,11 +18,17 @@ public class Dashboard extends HttpServlet
     	HttpSession session=req.getSession(false);    
         String uid=(String)session.getAttribute("username");
         
-        if(uid.charAt(0) == 'E') {
-        	res.sendRedirect("employeedash.html");
+        try {
+        	if(uid.charAt(0) == 'E') {
+            	res.sendRedirect("employeedash.html");
+            }
+            else if(uid.charAt(0) == 'M'){
+            	res.sendRedirect("managerdash.html");
+            }
         }
-        else {
-        	res.sendRedirect("managerdash.html");
+        catch(Exception e) {
+        	res.sendRedirect("login.html");
         }
+       
     }
 }
